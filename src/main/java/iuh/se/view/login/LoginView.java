@@ -42,13 +42,14 @@ public class LoginView extends JFrame {
         pnl.add(createLoginPanel(), BorderLayout.EAST);
 
         this.add(pnl);
-        this.setIconImage(new ImageIcon(Config.IMAGE_PATH + "logo.jpg").getImage());
+        this.setIconImage(new ImageIcon(Config.getImagePath("logo.jpg")).getImage());
         this.setResizable(false);
         this.setVisible(true);
     }
 
     private Component createLoginImagePanel() {
-        JPanel pnlImage = new ImagePanel(Config.IMAGE_PATH + "background.jpg");
+        JPanel pnlImage = new ImagePanel(Config.getImagePath("background.jpg"));
+        System.out.println(Config.getImagePath("background.jpg"));
         pnlImage.setBackground(Color.WHITE);
         pnlImage.setPreferredSize(new Dimension((int) (ConfigViewLogin.WIDTH * 0.6), ConfigViewLogin.HEIGHT));
         return pnlImage;
@@ -136,7 +137,7 @@ public class LoginView extends JFrame {
         pnlTitle.setAlignmentX(Component.CENTER_ALIGNMENT);
         pnlTitle.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
-        ImageIcon icon = new ImageIcon(Config.IMAGE_PATH + "loginImg    .png");
+        ImageIcon icon = new ImageIcon(Config.getImagePath("loginImg.jpg"));
         JLabel lblIcon = new JLabel(new ImageIcon(icon.getImage().getScaledInstance(80, 80, Image.SCALE_SMOOTH)));
         lblIcon.setAlignmentX(Component.CENTER_ALIGNMENT);
 
